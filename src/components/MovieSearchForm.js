@@ -3,6 +3,8 @@ import { TextField } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import PopUpDialog from "./PopUpDialog";
 import SearchMovieButton from "./SearchMovieButton";
+import config from "../config.json";
+const apiKey = config.API_KEY_OMDB;
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -41,13 +43,13 @@ const MovieSearchForm = ({ setSearchRes, id }) => {
   //Helpers
   const searchApiCall = async (searchedStr) => {
     const respSearch = await fetch(
-      `https://www.omdbapi.com/?s=${searchedStr}&apikey=300dade0`
+      `https://www.omdbapi.com/?s=${searchedStr}&apikey=${apiKey}`
     );
     const jsonSearch = await respSearch.json();
     handleResponseType(jsonSearch.Response);
     if (jsonSearch.Response === "False") return null;
     const respId = await fetch(
-      `https://www.omdbapi.com/?i=${jsonSearch.Search[0].imdbID}&apikey=300dade0`
+      `https://www.omdbapi.com/?i=${jsonSearch.Search[0].imdbID}&apikey=${apiKey}`
     );
     const jsonId = await respId.json();
     handleResponseType(jsonId.Response);
