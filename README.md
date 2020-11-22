@@ -1,3 +1,11 @@
+# You Will Need An Api Key To Test This Project
+
+You can get one from http://www.omdbapi.com/
+Simply create config.json under src and fill it like this:
+{
+"API_KEY_OMDB": "your_api_key_here"
+}
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
