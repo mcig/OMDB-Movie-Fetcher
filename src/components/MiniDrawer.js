@@ -114,7 +114,7 @@ export default function MiniDrawer({ children }) {
               [classes.hide]: open,
             })}
           >
-            <MenuIcon />
+            <MenuIcon color="primary" />
           </IconButton>
           <Typography variant="h6" noWrap>
             Movies And Tv Series Database
@@ -147,7 +147,13 @@ export default function MiniDrawer({ children }) {
           {["Home", "Movies", "Series"].map((text, idx) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {idx === 0 ? <Home /> : idx === 1 ? <Tv /> : <PlayArrow />}
+                {idx === 0 ? (
+                  <Home color="primary" />
+                ) : idx === 1 ? (
+                  <Tv color="primary" />
+                ) : (
+                  <PlayArrow color="primary" />
+                )}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>

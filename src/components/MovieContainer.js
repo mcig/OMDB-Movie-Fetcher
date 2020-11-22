@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import Movie from "./Movie";
 import MovieSearchForm from "./MovieSearchForm";
+
 const MovieContainer = () => {
   //States
   const [movies, setMovies] = useState([]);
@@ -16,7 +17,7 @@ const MovieContainer = () => {
   return (
     <div>
       <MovieSearchForm setSearchRes={setSearchRes} id="input-home" />
-      <Grid style={{ marginTop: "20px" }} spacing="3" container>
+      <Grid style={{ marginTop: "20px" }} spacing={3} container>
         {movies.map((movie, idx) => (
           <Grid key={idx} item>
             <Movie movie={movie} />

@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
     height: 0,
     paddingTop: "56.25%", // 16:9
   },
+  mediaExpanded: {
+    height: 0,
+    paddingTop: "450px",
+  },
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
@@ -57,7 +61,6 @@ export default function ReviewCard({ data }) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -69,7 +72,11 @@ export default function ReviewCard({ data }) {
         title={Title}
         subheader={`${Released} By ${Director}`}
       />
-      <CardMedia className={classes.media} image={Poster} title={Title} />
+      <CardMedia
+        className={expanded ? classes.mediaExpanded : classes.media}
+        image={Poster}
+        title={Title}
+      />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {Plot}
