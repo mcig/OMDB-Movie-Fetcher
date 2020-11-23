@@ -2,7 +2,7 @@ import MiniDrawer from "./components/MiniDrawer";
 import MovieContainer from "./components/MovieContainer";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 
-const NekşflişLightTheme = createMuiTheme({
+const NetflixLightTheme = createMuiTheme({
   palette: {
     primary: {
       main: "#000000",
@@ -16,7 +16,7 @@ const NekşflişLightTheme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={NekşflişLightTheme}>
+    <ThemeProvider theme={NetflixLightTheme}>
       <div className="App">
         <MiniDrawer>
           <MovieContainer />

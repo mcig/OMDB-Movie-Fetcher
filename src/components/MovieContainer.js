@@ -12,6 +12,7 @@ const MovieContainer = () => {
     if (searchRes) {
       setMovies([...movies, searchRes]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchRes]);
 
   return (
